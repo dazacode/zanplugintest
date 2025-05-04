@@ -1,0 +1,42 @@
+{
+  "id": "zoro",
+  "name": "Zoro (HiAnime)",
+  "type": "anime",
+  "version": "1.0.0",
+  "baseUrl": "https://takiapi.xyz/anime/zoro",
+  "search": {
+    "url": "/{{title}}?type=1",
+    "method": "GET",
+    "response": {
+      "results": {
+        "match": "title === query || normalizedMatch(title, query)",
+        "fields": {
+          "id": "id",
+          "title": "title",
+          "image": "image"
+        }
+      }
+    }
+  },
+  "info": {
+    "url": "/info?id={{id}}",
+    "method": "GET",
+    "response": {
+      "episodes": {
+        "fields": {
+          "id": "id",
+          "number": "number",
+          "title": "title",
+          "image": "image"
+        }
+      }
+    }
+  },
+  "headers": {
+    "User-Agent": "Zantaku/1.0"
+  },
+  "author": "Zantaku Team",
+  "icon": "https://www.zoro.to/favicon.ico",
+  "language": "en",
+  "nsfw": false
+}
